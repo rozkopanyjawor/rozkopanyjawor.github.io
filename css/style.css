@@ -1,0 +1,538 @@
+/* Root variables for theming */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+    --border-color: #dee2e6;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+    --timeline-line: #dee2e6;
+    --stages-bg: #e7f1ff;
+    --stage-border: #f0f0f0;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-card: #242424;
+    --text-primary: #e9ecef;
+    --text-secondary: #adb5bd;
+    --text-muted: #6c757d;
+    --border-color: #404040;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.5);
+    --timeline-line: #404040;
+    --stages-bg: #1e3a5f;
+    --stage-border: #404040;
+}
+
+/* Apply theme variables */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.card-header {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .card-header.bg-light {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] footer {
+    background-color: var(--bg-secondary) !important;
+}
+
+/* Mapa */
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+/* Karty remontów */
+.remont-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.remont-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-hover) !important;
+}
+
+/* Etapy remontu */
+.stages-section {
+    margin-bottom: 0.5rem;
+}
+
+.stages-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.stages-toggle:not(.collapsed) i {
+    transform: rotate(180deg);
+}
+
+.stages-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.stages-header {
+    font-weight: 600;
+    color: #0d6efd;
+    padding: 0.5rem 0.75rem;
+    background: var(--stages-bg);
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem;
+}
+
+.stage-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.75rem 0.75rem;
+    border-bottom: 1px solid var(--stage-border);
+}
+
+.stage-item:last-child {
+    border-bottom: none;
+}
+
+.stage-icon {
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    margin-top: 0.1rem;
+}
+
+.stage-content {
+    flex: 1;
+}
+
+.stage-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.stage-description {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.stage-completed .stage-name {
+    color: #198754;
+}
+
+.stage-current .stage-name {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.stage-pending .stage-name {
+    color: var(--text-muted);
+}
+
+.stage-pending .stage-description {
+    color: var(--text-muted);
+}
+
+/* Status badge */
+.status-badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Timeline aktualizacji */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--timeline-line);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0d6efd;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #0d6efd;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.update-date {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.update-text {
+    margin: 0.25rem 0;
+}
+
+.social-link {
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+/* Karty statystyk */
+.stat-card {
+    border-left: 4px solid;
+}
+
+.stat-card.stat-primary {
+    border-left-color: #0d6efd;
+}
+
+.stat-card.stat-success {
+    border-left-color: #198754;
+}
+
+.stat-card.stat-warning {
+    border-left-color: #ffc107;
+}
+
+.stat-card.stat-info {
+    border-left-color: #0dcaf0;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Źródło finansowania badge */
+.funding-badge {
+    display: inline-block;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.funding-wojewodztwo {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+[data-theme="dark"] .funding-wojewodztwo {
+    background-color: #1e3a5f;
+    color: #9db8e0;
+}
+
+.funding-powiat {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+[data-theme="dark"] .funding-powiat {
+    background-color: #1e4d3a;
+    color: #a3cfbb;
+}
+
+.funding-miasto {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+[data-theme="dark"] .funding-miasto {
+    background-color: #4d3d0f;
+    color: #e6d19c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #map {
+        height: 350px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* Loading spinner */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Leaflet popup customization */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.leaflet-popup-content {
+    margin: 15px;
+}
+
+.popup-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0d6efd;
+}
+
+.popup-progress {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Dark mode Leaflet styles */
+[data-theme="dark"] .leaflet-popup-content-wrapper {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .leaflet-popup-tip {
+    background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .leaflet-container {
+    background-color: #1a1a1a;
+}
+
+[data-theme="dark"] .leaflet-control-zoom a,
+[data-theme="dark"] .leaflet-control-layers-toggle {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .leaflet-control-zoom a:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .leaflet-control-attribution {
+    background-color: rgba(36, 36, 36, 0.8);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .leaflet-control-attribution a {
+    color: #9db8e0;
+}
+
+[data-theme="dark"] .leaflet-bar {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .leaflet-control-layers {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .leaflet-control-layers-list {
+    color: var(--text-primary);
+}
+
+/* Custom marker styling */
+.custom-marker {
+    background: transparent;
+    border: none;
+}
+
+/* Dark mode toggle button */
+#darkModeToggle {
+    transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.1);
+}
+
+/* Documents and links section */
+.documents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.document-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.document-link:hover {
+    background-color: var(--bg-primary);
+    box-shadow: 0 2px 8px var(--shadow-hover);
+    transform: translateY(-1px);
+    color: var(--text-primary);
+}
+
+.document-link i {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.document-title {
+    flex: 1;
+}
+
+/* Document type specific colors */
+.doc-przetarg {
+    border-left: 4px solid #0d6efd;
+}
+
+.doc-przetarg:hover {
+    border-left-color: #0b5ed7;
+}
+
+.doc-przetarg i {
+    color: #0d6efd;
+}
+
+.doc-umowa {
+    border-left: 4px solid #198754;
+}
+
+.doc-umowa:hover {
+    border-left-color: #157347;
+}
+
+.doc-umowa i {
+    color: #198754;
+}
+
+.doc-harmonogram {
+    border-left: 4px solid #0dcaf0;
+}
+
+.doc-harmonogram:hover {
+    border-left-color: #0aa2c0;
+}
+
+.doc-harmonogram i {
+    color: #0dcaf0;
+}
+
+.doc-projekt {
+    border-left: 4px solid #6f42c1;
+}
+
+.doc-projekt:hover {
+    border-left-color: #59359a;
+}
+
+.doc-projekt i {
+    color: #6f42c1;
+}
+
+.doc-decyzja {
+    border-left: 4px solid #20c997;
+}
+
+.doc-decyzja:hover {
+    border-left-color: #1aa179;
+}
+
+.doc-decyzja i {
+    color: #20c997;
+}
+
+.doc-strona {
+    border-left: 4px solid #fd7e14;
+}
+
+.doc-strona:hover {
+    border-left-color: #e56b0d;
+}
+
+.doc-strona i {
+    color: #fd7e14;
+}
+
+.doc-other {
+    border-left: 4px solid #6c757d;
+}
+
+.doc-other:hover {
+    border-left-color: #565e64;
+}
+
+.doc-other i {
+    color: #6c757d;
+}
+
+/* Dark mode adjustments for documents */
+[data-theme="dark"] .document-link {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .document-link:hover {
+    background-color: #3a3a3a;
+}
