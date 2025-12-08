@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDarkMode();
     initMap();
     loadRemontyData();
+    handleUrlHash();
 });
 
 // Inicjalizacja trybu ciemnego
@@ -183,8 +184,8 @@ function displayRemonty(remonty) {
         const etapyHTML = generateEtapyHTML(remont.etapyZakonczone, remont.etapBiezacy);
         
         return `
-            <div class="card remont-card shadow-sm mb-4">
-                <div class="card-header bg-light">
+            <div class="card remont-card shadow-sm mb-4" id="remont-${remont.id}">
+                <div class="card-header bg-light remont-card-header" data-bs-toggle="collapse" data-bs-target="#collapse-${remont.id}" role="button">
                     <div class="row align-items-center">
                         <div class="col-md-8">
                             <h5 class="mb-0">
@@ -195,11 +196,18 @@ function displayRemonty(remonty) {
                             </small>
                         </div>
                         <div class="col-md-4 text-md-end mt-2 mt-md-0">
+                            <button class="btn btn-sm btn-outline-secondary share-btn me-2" 
+                                    onclick="shareRemont(event, ${remont.id})" 
+                                    title="Udostępnij link do tego remontu">
+                                <i class="bi bi-share"></i>
+                            </button>
                             <span class="status-badge badge bg-${progressColor}">${statusText}</span>
+                            <i class="bi bi-chevron-down collapse-icon ms-2"></i>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="collapse" id="collapse-${remont.id}">
+                    <div class="card-body">
                     <div class="row">
                         <div class="col-md-8 mb-3">
                             <h6>Postęp prac - Etapy remontu</h6>
@@ -238,12 +246,112 @@ function displayRemonty(remonty) {
                             </div>
                         </div>
                     ` : ''}
+                    </div>
                 </div>
             </div>
         `;
     }).join('');
     
     container.innerHTML = remontyHTML;
+    
+    // Add event listeners for expand-card buttons after rendering
+    setupExpandCardListeners();
+}
+
+// Setup event listeners for "Więcej informacji" buttons
+function setupExpandCardListeners() {
+    // Use event delegation since popups are created dynamically
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.expand-card-btn')) {
+            e.preventDefault();
+            const btn = e.target.closest('.expand-card-btn');
+            const remontId = btn.getAttribute('data-remont-id');
+            
+            if (remontId) {
+                // Scroll to the card
+                const cardElement = document.getElementById(`remont-${remontId}`);
+                if (cardElement) {
+                    cardElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Expand the card if it's collapsed
+                    const collapseElement = document.getElementById(`collapse-${remontId}`);
+                    if (collapseElement && !collapseElement.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(collapseElement, {
+                            toggle: true
+                        });
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Share remont - copy link with ID to clipboard
+function shareRemont(event, remontId) {
+    event.stopPropagation();
+    event.preventDefault();
+    
+    // Find the button element (in case the icon was clicked)
+    const btn = event.target.closest('.share-btn');
+    if (!btn) return;
+    
+    const url = `${window.location.origin}${window.location.pathname}#remont-${remontId}`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(url).then(() => {
+        // Show success feedback
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="bi bi-check"></i>';
+        btn.classList.add('btn-success');
+        btn.classList.remove('btn-outline-secondary');
+        
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-outline-secondary');
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy link:', err);
+        alert('Nie udało się skopiować linku');
+    });
+}
+
+// Handle URL hash on page load
+function handleUrlHash() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#remont-')) {
+        const remontId = hash.replace('#remont-', '');
+        
+        // Wait for DOM to be fully rendered
+        setTimeout(() => {
+            scrollToAndHighlightRemont(remontId);
+        }, 500);
+    }
+}
+
+// Scroll to remont and highlight it
+function scrollToAndHighlightRemont(remontId) {
+    const cardElement = document.getElementById(`remont-${remontId}`);
+    if (cardElement) {
+        // Scroll to card
+        cardElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Expand the card if collapsed
+        const collapseElement = document.getElementById(`collapse-${remontId}`);
+        if (collapseElement && !collapseElement.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(collapseElement, {
+                toggle: true
+            });
+        }
+        
+        // Add pulsing highlight class
+        cardElement.classList.add('remont-highlighted');
+        
+        // Remove highlight after animation completes
+        setTimeout(() => {
+            cardElement.classList.remove('remont-highlighted');
+        }, 3000);
+    }
 }
 
 // Generowanie HTML dla dokumentów i linków
@@ -520,7 +628,6 @@ function addMarkersToMap(remonty) {
             icon: markerIcon
         }).addTo(map);
         
-        const statusText2 = getStatusText(remont.etapBiezacy);
         const etapInfo2 = remont.etapBiezacy === 'zakończony' 
             ? 'Zakończony' 
             : `Etap: ${remont.etapBiezacy}/8 - ${etapyRemontu.find(e => e.id === remont.etapBiezacy)?.nazwa || 'Nieznany etap'}`;
@@ -528,6 +635,11 @@ function addMarkersToMap(remonty) {
             <div class="popup-title">${remont.nazwa}</div>
             <div class="popup-progress">${etapInfo2}</div>
             <small>${remont.lokalizacja.ulica}</small>
+            <div class="mt-2">
+                <a href="#remont-${remont.id}" class="btn btn-sm btn-primary text-white expand-card-btn" data-remont-id="${remont.id}">
+                    <i class="bi bi-info-circle"></i> Więcej informacji
+                </a>
+            </div>
         `;
         
         marker.bindPopup(popupContent);

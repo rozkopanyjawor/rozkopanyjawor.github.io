@@ -1,169 +1,47 @@
 [
   {
-    "id": 1,
-    "nazwa": "Remont ulicy Wrocławskiej",
+    "id": 5,
+    "nazwa": "Przebudowa wiaduktu na ulicy Kuzienniczej",
     "lokalizacja": {
-      "ulica": "Wrocławska",
-      "lat": 51.0527,
-      "lng": 16.1927,
+      "ulica": "Kuziennicza",
+      "lat": 51.052623,
+      "lng": 16.210723,
       "sciezka": [
-        [51.0520, 16.1920],
-        [51.0525, 16.1925],
-        [51.0530, 16.1930],
-        [51.0535, 16.1935]
+        [51.054415, 16.210972],
+        [51.053697, 16.210992],
+        [51.052623, 16.210723],
+        [51.051981, 16.210442],
+        [51.051268, 16.209894],
+        [51.049308, 16.208307]
       ]
     },
-    "dataRozpoczecia": "2024-03-15",
-    "dataZakonczeniaPlanowana": "2024-12-20",
-    "etapyZakonczone": [1, 2, 3, 4, 5, 6],
-    "etapBiezacy": 7,
-    "zrodloFinansowania": "Województwo Dolnośląskie",
+    "dataRozpoczecia": "2025-11-19",
+    "dataZakonczeniaPlanowana": "2026-12-31",
+    "etapyZakonczone": [],
+    "etapBiezacy": 2,
+    "zrodloFinansowania": "Dolnośląska Służba Dróg i Kolei",
     "dokumenty": [
       {
-        "nazwa": "Ogłoszenie przetargu",
+        "nazwa": "Ogłoszenie przetargu BZP",
         "typ": "przetarg",
-        "url": "https://ezamowienia.gov.pl/"
+        "url": "https://ezamowienia.gov.pl/mo-client-board/bzp/notice-details/2025%2FBZP%2000155338%2F01"
       },
       {
-        "nazwa": "Projekt wykonawczy",
-        "typ": "projekt",
-        "url": "https://jawor.pl/dokumenty/"
-      },
-      {
-        "nazwa": "Harmonogram robót",
-        "typ": "harmonogram",
-        "url": "https://jawor.pl/harmonogram/"
+        "nazwa": "Szczegóły zamówienia",
+        "typ": "zamówienie",
+        "url": "https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-00dd65af-f66c-4a4a-a87f-d2ec3b653502"
       }
     ],
     "aktualizacje": [
       {
-        "data": "2024-11-20",
-        "tresc": "Zakończono układanie asfaltu na odcinku północnym",
-        "linkSocialMedia": "https://facebook.com/example"
+        "data": "2025-11-19",
+        "tresc": "Całkowite zamknięcie wiaduktu. Rozpoczęcie przebudowy za 6,8 mln zł netto przez firmę Berger Bau Polska",
+        "linkSocialMedia": "https://jawor24h.pl/17434/od-srody-zamkniety-wiadukt-na-kuzienniczej-rusza-przebudowa-za-6-8-mln-zl/a.html"
       },
       {
-        "data": "2024-10-15",
-        "tresc": "Trwają prace przy modernizacji chodników",
-        "linkSocialMedia": "https://facebook.com/example"
-      },
-      {
-        "data": "2024-09-10",
-        "tresc": "Rozpoczęto wymianę kanalizacji deszczowej",
-        "linkSocialMedia": "https://facebook.com/example"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "nazwa": "Modernizacja ulicy Legnickiej",
-    "lokalizacja": {
-      "ulica": "Legnicka",
-      "lat": 51.0545,
-      "lng": 16.1950,
-      "sciezka": [
-        [51.0540, 16.1945],
-        [51.0545, 16.1950],
-        [51.0550, 16.1955]
-      ]
-    },
-    "dataRozpoczecia": "2024-06-01",
-    "dataZakonczeniaPlanowana": "2025-03-30",
-    "etapyZakonczone": [1, 2, 3],
-    "etapBiezacy": 4,
-    "zrodloFinansowania": "Miasto Jawor",
-    "dokumenty": [
-      {
-        "nazwa": "Informacje o remoncie",
-        "typ": "strona www",
-        "url": "https://jawor.pl/"
-      },
-      {
-        "nazwa": "Umowa z wykonawcą",
-        "typ": "umowa",
-        "url": "https://bip.jawor.pl/"
-      }
-    ],
-    "aktualizacje": [
-      {
-        "data": "2024-12-01",
-        "tresc": "Kontynuacja prac mimo niskich temperatur",
-        "linkSocialMedia": "https://facebook.com/example"
-      },
-      {
-        "data": "2024-11-10",
-        "tresc": "Zakończono pierwszą fazę robót ziemnych",
-        "linkSocialMedia": "https://facebook.com/example"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "nazwa": "Przebudowa skrzyżowania ul. Kościuszki",
-    "lokalizacja": {
-      "ulica": "Kościuszki",
-      "lat": 51.0510,
-      "lng": 16.1905,
-      "sciezka": [
-        [51.0508, 16.1903],
-        [51.0510, 16.1905],
-        [51.0512, 16.1907]
-      ]
-    },
-    "dataRozpoczecia": "2024-04-20",
-    "dataZakonczeniaPlanowana": "2024-11-30",
-    "etapyZakonczone": [1, 2, 3, 4, 5, 6, 7, 8],
-    "etapBiezacy": "zakończony",
-    "zrodloFinansowania": "Powiat Jaworski",
-    "dokumenty": [
-      {
-        "nazwa": "Decyzja o pozwoleniu na budowę",
-        "typ": "pozwolenie",
-        "url": "https://powiat-jaworski.pl/"
-      },
-      {
-        "nazwa": "Protokół odbioru końcowego",
-        "typ": "umowa",
-        "url": "https://bip.powiat-jaworski.pl/"
-      }
-    ],
-    "aktualizacje": [
-      {
-        "data": "2024-11-25",
-        "tresc": "Montaż nowej sygnalizacji świetlnej",
-        "linkSocialMedia": "https://facebook.com/example"
-      },
-      {
-        "data": "2024-11-15",
-        "tresc": "Naniesienie oznakowania poziomego",
-        "linkSocialMedia": "https://facebook.com/example"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "nazwa": "Remont ulicy Zamkowej",
-    "lokalizacja": {
-      "ulica": "Zamkowa",
-      "lat": 51.0535,
-      "lng": 16.1890,
-      "sciezka": [
-        [51.0530, 16.1885],
-        [51.0533, 16.1888],
-        [51.0535, 16.1890],
-        [51.0538, 16.1893],
-        [51.0540, 16.1895]
-      ]
-    },
-    "dataRozpoczecia": "2024-08-10",
-    "dataZakonczeniaPlanowana": "2025-06-15",
-    "etapyZakonczone": [1, 2],
-    "etapBiezacy": 3,
-    "zrodloFinansowania": "Województwo Dolnośląskie",
-    "aktualizacje": [
-      {
-        "data": "2024-12-05",
-        "tresc": "Rozpoczęto wymianę sieci wodociągowej",
-        "linkSocialMedia": "https://facebook.com/example"
+        "data": "2025-11-20",
+        "tresc": "Ruszyła modernizacja wiaduktu nad czynną linią kolejową. Będą utrudnienia w ruchu",
+        "linkSocialMedia": "https://www.legnica.fm/wiadomosci/wiadomosci-fakty/19-fakty-jawor/60334-wiadukt-na-kuzienniczej-calkowicie-zamkniety-ruszyla-jego-modernizacja-beda-utrudnienia-w-ruchu"
       }
     ]
   }
