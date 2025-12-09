@@ -29,10 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function initDarkMode() {
     // Sprawdź preferencje użytkownika z localStorage
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Ustaw tryb ciemny, jeśli zapisany lub preferowany przez system
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    // Ustaw tryb ciemny jako domyślny, chyba że użytkownik wybrał jasny tryb
+    if (savedTheme !== 'light') {
         enableDarkMode();
     }
     
