@@ -44,5 +44,145 @@
         "linkSocialMedia": "https://www.legnica.fm/wiadomosci/wiadomosci-fakty/19-fakty-jawor/60334-wiadukt-na-kuzienniczej-calkowicie-zamkniety-ruszyla-jego-modernizacja-beda-utrudnienia-w-ruchu"
       }
     ]
+  },
+  {
+    "id": 6,
+    "nazwa": "Remont ul. Poniatowskiego i budowa kanalizacji deszczowej",
+    "lokalizacja": {
+      "ulica": "Poniatowskiego",
+      "lat": 51.05561877180369,
+      "lng": 16.194518333134667,
+      "sciezka": [
+        [51.05561877180369, 16.194518333134667],
+        [51.054517881892515, 16.193671757876725],
+        [51.05441754209088, 16.193800553542257],
+        [51.05399791521181, 16.19352684740865]
+      ]
+    },
+    "dataRozpoczecia": "2025-03-15",
+    "dataZakonczeniaPlanowana": "2025-06-15",
+    "etapyZakonczone": [],
+    "etapBiezacy": 4,
+    "zrodloFinansowania": "Środki rządowe - około 5 mln zł",
+    "dokumenty": [
+      {
+        "nazwa": "Informacja o remoncie - Jawor24h",
+        "typ": "informacja",
+        "url": "https://jawor24h.pl/16844/remont-ul-poniatowskiego-i-budowa-dwoch-rond/a.html"
+      },
+      {
+        "nazwa": "Szczegóły budowy kanalizacji",
+        "typ": "informacja",
+        "url": "https://jawor.pl/budujemy-nowa-kanalizacje-deszczowa/"
+      },
+      {
+        "nazwa": "Kurier Jaworski - wrzesień 2025",
+        "typ": "dokument",
+        "url": "https://jawor.pl/wp-content/uploads/2025/10/kj2025_wrzesien.pdf"
+      }
+    ],
+    "aktualizacje": [
+      {
+        "data": "2025-03-07",
+        "tresc": "Ogłoszenie planowanego remontu ul. Poniatowskiego i budowy dwóch rond. Budowa nowej kanalizacji deszczowej (700m) od ul. Poniatowskiego przez ul. Wyszyńskiego, 1 Maja i Przechodnią do Nysy Szalonej",
+        "linkSocialMedia": "https://jawor24h.pl/16844/remont-ul-poniatowskiego-i-budowa-dwoch-rond/a.html"
+      },
+      {
+        "data": "2025-03-15",
+        "tresc": "Rozpoczęcie prac - budowa kanalizacji deszczowej z nową nitką 700m, zbiornikiem retencyjnym 100m³ i systemem pompowym. Wyłączony prawy pas ruchu w kierunku ul. Wyszyńskiego. Wykonawca: COM-D sp. z o.o. Czas trwania: około 3 miesiące",
+        "linkSocialMedia": "https://jawor.pl/budujemy-nowa-kanalizacje-deszczowa/"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nazwa": "Przebudowa ul. Wrocławskiej - etap II",
+    "lokalizacja": {
+      "ulica": "Wrocławska",
+      "lat": 51.05270615762118,
+      "lng": 16.19599823842054,
+      "sciezka": [
+        [51.05270615762118, 16.19599823842054],
+        [51.05246138701538, 16.19673155084125],
+        [51.0523045683056, 16.19760124861589],
+        [51.05218011866105, 16.198345923126023]
+      ]
+    },
+    "dataRozpoczecia": "2025-12-01",
+    "dataZakonczeniaPlanowana": "2026-06-30",
+    "etapyZakonczone": [1, 2],
+    "etapBiezacy": 3,
+    "zrodloFinansowania": "Budżet miasta Jawor",
+    "dokumenty": [
+      {
+        "nazwa": "Informacja o II etapie - Legnica FM",
+        "typ": "informacja",
+        "url": "https://www.legnica.fm/wiadomosci/wiadomosci-fakty/19-fakty-jawor/60432-rusza-drugi-etap-przebudowy-ul-wroclawskiej"
+      },
+      {
+        "nazwa": "Film Facebook - zapowiedź II etapu",
+        "typ": "wideo",
+        "url": "https://www.facebook.com/watch/?v=2053596972086064"
+      },
+      {
+        "nazwa": "Film Facebook - organizacja ruchu",
+        "typ": "wideo",
+        "url": "https://www.facebook.com/watch/?v=1178435494227338"
+      }
+    ],
+    "aktualizacje": [
+      {
+        "data": "2025-11-27",
+        "tresc": "Zapowiedź rozpoczęcia II etapu przebudowy ul. Wrocławskiej od 1 grudnia 2025. Modernizowany będzie odcinek od PCKZiU do ul. Legnickiej. Na czas remontu ul. Reja będzie drogą dwukierunkową",
+        "linkSocialMedia": "https://www.legnica.fm/wiadomosci/wiadomosci-fakty/19-fakty-jawor/60432-rusza-drugi-etap-przebudowy-ul-wroclawskiej"
+      },
+      {
+        "data": "2025-12-01",
+        "tresc": "Rozpoczęcie II etapu przebudowy ul. Wrocławskiej - odcinek od PCKZiU do ul. Legnickiej",
+        "linkSocialMedia": "https://www.facebook.com/watch/?v=2053596972086064"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nazwa": "Przebudowa ul. Kuzienniczej - odcinek od Starego Cmentarza",
+    "lokalizacja": {
+      "ulica": "Kuziennicza",
+      "lat": 51.059803988316446,
+      "lng": 16.193798131223247,
+      "sciezka": [ 
+        [51.059803988316446, 16.193798131223247],
+        [51.05856599878962, 16.195937314567686]
+      ]
+    },
+    "dataRozpoczecia": "2020-05-01",
+    "dataZakonczeniaPlanowana": "2020-06-25",
+    "etapyZakonczone": [1, 2, 3, 4, 6],
+    "etapBiezacy": 5,
+    "zrodloFinansowania": "Gmina Jawor",
+    "dokumenty": [
+      {
+        "nazwa": "Ogłoszenie o przebudowie - jawor.pl",
+        "typ": "informacja",
+        "url": "https://jawor.pl/uwaga-przebudowa-ul-kuzienniczej/"
+      },
+      {
+        "nazwa": "Post Facebook Burmistrza Jawora",
+        "typ": "social-media",
+        "url": "https://www.facebook.com/burmistrz.jawora/posts/1237452931363840/"
+      },
+      {
+        "nazwa": "Post Facebook Jawor24h",
+        "typ": "social-media",
+        "url": "https://www.facebook.com/jawor24h/posts/1308758887916282/"
+      }
+    ],
+    "aktualizacje": [
+      {
+        "data": "2020-05-01",
+        "tresc": "Rozpoczęcie prac remontowych na ul. Kuzienniczej na odcinku od skrzyżowania z ul. Poniatowskiego do skrzyżowania z ul. Żwirową (odcinek od Starego Cmentarza). Wprowadzono tymczasową organizację ruchu podzieloną na 4 etapy. Wykonawca: Berger Bau Polska",
+        "linkSocialMedia": "https://jawor.pl/uwaga-przebudowa-ul-kuzienniczej/"
+      }
+    ]
   }
 ]
