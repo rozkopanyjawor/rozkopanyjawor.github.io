@@ -184,5 +184,42 @@
         "linkSocialMedia": "https://jawor.pl/uwaga-przebudowa-ul-kuzienniczej/"
       }
     ]
+  },
+  {
+    "id": 9,
+    "nazwa": "Budowa ronda na ul. Lubińskiej i rozbudowa ul. Daimlera",
+    "lokalizacja": {
+      "ulica": "Lubińska",
+      "lat": 51.074442131172944,
+      "lng": 16.18718384362867,
+      "sciezka": [
+        [51.074442131172944, 16.18718384362867],
+        [51.07207163059644, 16.188178481048183]
+      ]
+    },
+    "dataRozpoczecia": "2025-08-18",
+    "dataZakonczeniaPlanowana": "2025-11-30",
+    "etapyZakonczone": [1,2,3,4],
+    "etapBiezacy": 5,
+    "zrodloFinansowania": "Gmina Jawor",
+    "dokumenty": [
+      {
+        "nazwa": "Informacja o inwestycji - jawor.pl",
+        "typ": "informacja",
+        "url": "https://jawor.pl/rozbudowa-ul-daimlera-i-nowe-rondo/"
+      },
+      {
+        "nazwa": "Post Facebook Burmistrza Jawora",
+        "typ": "social-media",
+        "url": "https://www.facebook.com/burmistrz.jawora/posts/1294620178980448/"
+      }
+    ],
+    "aktualizacje": [
+      {
+        "data": "2025-08-18",
+        "tresc": "Rozpoczęcie pierwszego etapu budowy ronda na skrzyżowaniu ul. Lubińskiej (DW320) z nowo powstającą ul. Łącznikową (na wysokości obecnej ul. Gryczanej). Jednocześnie rozpoczyna się rozbudowa ul. Daimlera - poszerzenie i budowa trzeciego pasa ruchu (pas zjazdu) dla wygodnego dojazdu do budowanej ul. Północnej. Na czas realizacji zamknięty jeden pas jezdni, wprowadzony ruch wahadłowy wraz z sygnalizacją świetlną. Prace potrwają do końca listopada 2025 roku",
+        "linkSocialMedia": "https://jawor.pl/rozbudowa-ul-daimlera-i-nowe-rondo/"
+      }
+    ]
   }
 ]
